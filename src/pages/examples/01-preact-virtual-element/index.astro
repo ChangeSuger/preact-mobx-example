@@ -1,0 +1,36 @@
+---
+import DocLayout from '@/layout/DocLayout.astro';
+import { Code } from '@astrojs/starlight/components';
+const code = `
+import { h, render } from 'preact';
+
+const element1 = h(
+  'div',
+  { class: 'flex w-full justify-center items-center gap-8 bg-white rounded' },
+  h('span', null, 'Preact Virtual Element1'),
+  '|',
+  h('span', null, 'Preact Virtual Element2'),
+);
+
+render(element1, document.getElementById('virtual-element-container')!);
+`;
+---
+
+<DocLayout title='虚拟 DOM 元素'>
+  <div id="virtual-element-container"></div>
+  <Code code={code} lang='ts' />
+</DocLayout>
+
+<script>
+import { h, render } from 'preact';
+
+const element1 = h(
+  'div',
+  { class: 'flex w-full justify-center items-center gap-8 bg-white rounded' },
+  h('span', null, 'Preact Virtual Element1'),
+  '|',
+  h('span', null, 'Preact Virtual Element2'),
+);
+
+render(element1, document.getElementById('virtual-element-container')!);
+</script>

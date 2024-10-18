@@ -1,0 +1,16 @@
+---
+import DocLayout from "@/layout/DocLayout.astro";
+import { Code } from '@astrojs/starlight/components';
+import { Counter as Counter1, counterCode as counterCode1 } from "./CounterClass";
+import { Counter as Counter2, counterCode as counterCode2 } from "./CounterFunction";
+---
+
+<DocLayout title="组件">
+  <h2>类组件</h2>
+  <Counter1 client:load />
+  <Code code={counterCode1} lang="tsx" />
+
+  <h2>函数组件</h2>
+  <Counter2 client:load />
+  <Code code={counterCode2} lang="tsx" />
+</DocLayout>
