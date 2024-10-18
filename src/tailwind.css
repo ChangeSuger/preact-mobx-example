@@ -6,3 +6,33 @@
 Add additional Tailwind styles to this file, for example with @layer:
 https://tailwindcss.com/docs/adding-custom-styles#using-css-and-layer
 */
+
+/* 滚动条样式优化 */
+
+body {
+  /* 避免在有滚动条与无滚动条的页面间切换时，横向有明显偏移的感觉 */
+  overflow-y: scroll;
+}
+
+@media screen {
+  ::-webkit-scrollbar {
+    border-radius: 1rem;
+    background: transparent;
+    width: 0.5rem;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border: 2px solid transparent;
+    border-radius: 0.25rem;
+    background: rgb(153, 152, 152);
+    background-clip: content-box;
+
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(75, 75, 77);
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+}
